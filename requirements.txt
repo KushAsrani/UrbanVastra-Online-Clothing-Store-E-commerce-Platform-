@@ -10,3 +10,6 @@ python-decouple>=3.8
 # For production deployment (when you deploy)
 gunicorn>=21.0.0
 whitenoise>=6.5.0
+
+# PostgreSQL database driver
+psycopg2-binary>=2.9.0
