@@ -1,15 +1,19 @@
 {
-  "buildCommand": "pip install -r requirements.txt && cd genx && python manage.py collectstatic --noinput",
-  "outputDirectory": ".",
+  "buildCommand": "cd genx && pip install -r ../requirements.txt && python manage.py collectstatic --noinput",
+  "outputDirectory": "genx",
   "functions": {
     "api/index.py": {
-      "runtime": "python3.9"
+      "runtime": "python3.9",
+      "maxDuration": 30
     }
   },
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "/static/$1",
+      "headers": {
+        "cache-control": "public, max-age=3600, immutable"
+      }
     },
     {
       "src": "/(.*)",
