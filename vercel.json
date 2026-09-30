@@ -4,14 +4,11 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1",
-      "headers": {
-        "cache-control": "public, max-age=3600, immutable"
-      }
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/genx/genx/wsgi.py"
+      "dest": "/api/index.py"
     }
   ]
 }
