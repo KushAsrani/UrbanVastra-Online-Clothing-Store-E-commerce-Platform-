@@ -1,11 +1,6 @@
 {
   "buildCommand": "pip install -r requirements.txt && cd genx && python manage.py collectstatic --noinput",
   "outputDirectory": ".",
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.9"
-    }
-  },
   "routes": [
     {
       "src": "/static/(.*)",
@@ -13,7 +8,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.py"
+      "dest": "/genx/genx/wsgi.py"
     }
   ]
 }

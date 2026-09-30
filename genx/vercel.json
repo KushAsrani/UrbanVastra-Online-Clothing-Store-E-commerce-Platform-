@@ -1,9 +1,0 @@
-{
-  "buildCommand": "pip install -r requirements.txt && python genx/manage.py migrate && python genx/manage.py collectstatic --noinput",
-  "outputDirectory": ".",
-  "functions": {
-    "genx/wsgi.py": {
-      "runtime": "python3.11"
-    }
-  }
-}
